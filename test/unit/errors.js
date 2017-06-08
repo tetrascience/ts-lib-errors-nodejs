@@ -4,6 +4,7 @@ const assert = require('chai').assert;
 
 const errors = require('../../lib');
 
+
 describe('FeatureDisabledError', () => {
   describe('#constructor', () => {
     it('should set message to 1st arg if is string', () => {
