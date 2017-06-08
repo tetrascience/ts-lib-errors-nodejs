@@ -8,8 +8,9 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "eslint": "^3.19.0",
-    "nyc": "^11.0.2",
-    "tetrascience/eslint-config-tetrascience": "^1.0.0"
+    "eslint-config-tetrascience": "tetrascience/eslint-config-tetrascience",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.2"
   },
   "keywords": [
     "errors"
