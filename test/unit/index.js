@@ -3,52 +3,6 @@ const assert = require('chai').assert;
 const errors = require('../../lib');
 
 
-describe('FeatureDisabledError', () => {
-  describe('#constructor', () => {
-    it('should set message to 1st arg if is string', () => {
-      const e = new errors.FeatureDisabledError('a');
-      assert.strictEqual(e.message, 'a');
-    });
-
-    it('should set message to default if 1st arg is not string', () => {
-      const e = new errors.FeatureDisabledError(42);
-      assert.strictEqual(e.message, errors.FeatureDisabledError.defaultMessage);
-    });
-
-    it('should set data to 1st arg if not string', () => {
-      const e = new errors.FeatureDisabledError(42);
-      assert.strictEqual(e.data, 42);
-    });
-
-    it('should throw if 2 args, and 1st is not string', () => {
-      assert.throws(() => {
-        const e = new errors.FeatureDisabledError(21, 12);
-        assert.isNotOk(e);
-      }, TypeError);
-    });
-
-    it('should set message to 1st arg if 2 args', () => {
-      const e = new errors.FeatureDisabledError('a', 42);
-      assert.strictEqual(e.message, 'a');
-    });
-
-    it('should set data to 2nd arg if 2 args', () => {
-      const e = new errors.FeatureDisabledError('a', 42);
-      assert.strictEqual(e.data, 42);
-    });
-
-    it('should set message to defualt if undefined and 2 args', () => {
-      const e = new errors.FeatureDisabledError(undefined, 42);
-      assert.strictEqual(e.message, errors.FeatureDisabledError.defaultMessage);
-    });
-
-    it('should be instanceof Error', () => {
-      const e = new errors.FeatureDisabledError();
-      assert.instanceOf(e, Error);
-    });
-  });
-});
-
 describe('FormatError', () => {
   describe('#constructor', () => {
     it('should set message to 1st arg if is string', () => {
