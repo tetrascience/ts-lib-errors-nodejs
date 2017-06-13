@@ -1,0 +1,29 @@
+{
+  "name": "ts-errors",
+  "longName": "Common errors for Node.js",
+  "version": "1.0.0",
+  "dependencies": {
+    "elv": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-tetrascience": "tetrascience/eslint-config-tetrascience",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.2"
+  },
+  "keywords": [
+    "errors"
+  ],
+  "license": "MIT",
+  "main": "./lib",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tetrascience/ts-lib-errors-node"
+  },
+  "scripts": {
+    "lint": "eslint ./**/*.js",
+    "test": "NODE_ENV=test nyc --reporter=lcov  --reporter=text mocha --recursive ./test"
+  }
+}
