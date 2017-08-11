@@ -38,7 +38,7 @@ describe('FormatError', () => {
       assert.strictEqual(e.data, 42);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.FormatError(undefined, 42);
       assert.strictEqual(e.message, errors.FormatError.defaultMessage);
     });
@@ -98,7 +98,7 @@ describe('ValidationError', () => {
       assert.isArray(e.data);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.ValidationError(undefined, 42);
       assert.strictEqual(e.message, errors.ValidationError.defaultMessage);
     });
@@ -145,7 +145,7 @@ describe('CredentialsError', () => {
       assert.strictEqual(e.data, 42);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.CredentialsError(undefined, 42);
       assert.strictEqual(e.message, errors.CredentialsError.defaultMessage);
     });
@@ -192,7 +192,7 @@ describe('UnauthorizedError', () => {
       assert.strictEqual(e.data, 42);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.UnauthorizedError(undefined, 42);
       assert.strictEqual(e.message, errors.UnauthorizedError.defaultMessage);
     });
@@ -239,7 +239,7 @@ describe('NotFoundError', () => {
       assert.strictEqual(e.data, 42);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.NotFoundError(undefined, 42);
       assert.strictEqual(e.message, errors.NotFoundError.defaultMessage);
     });
@@ -286,7 +286,7 @@ describe('ExistsError', () => {
       assert.strictEqual(e.data, 42);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.ExistsError(undefined, 42);
       assert.strictEqual(e.message, errors.ExistsError.defaultMessage);
     });
@@ -333,7 +333,7 @@ describe('ConcurrencyError', () => {
       assert.strictEqual(e.data, 42);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.ConcurrencyError(undefined, 42);
       assert.strictEqual(e.message, errors.ConcurrencyError.defaultMessage);
     });
@@ -364,7 +364,6 @@ describe('TempUnavailableError', () => {
 
     it('should throw if 2 args, and 1st is not string', () => {
       assert.throws(() => {
-        // We are the priests of the Temples of Syrinx
         const e = new errors.TempUnavailableError(21, 12);
         assert.isNotOk(e);
       }, TypeError);
@@ -380,13 +379,59 @@ describe('TempUnavailableError', () => {
       assert.strictEqual(e.data, 42);
     });
 
-    it('should set message to defualt if undefined and 2 args', () => {
+    it('should set message to default if undefined and 2 args', () => {
       const e = new errors.TempUnavailableError(undefined, 42);
       assert.strictEqual(e.message, errors.TempUnavailableError.defaultMessage);
     });
 
     it('should be instanceof Error', () => {
       const e = new errors.TempUnavailableError();
+      assert.instanceOf(e, Error);
+    });
+  });
+});
+
+describe('EnumError', () => {
+  describe('#constructor', () => {
+    it('should set message to 1st arg if is string', () => {
+      const e = new errors.EnumError('a');
+      assert.strictEqual(e.message, 'a');
+    });
+
+    it('should set message to default if 1st arg is not string', () => {
+      const e = new errors.EnumError(42);
+      assert.strictEqual(e.message, errors.EnumError.defaultMessage);
+    });
+
+    it('should set data to 1st arg if not string', () => {
+      const e = new errors.EnumError(42);
+      assert.strictEqual(e.data, 42);
+    });
+
+    it('should throw if 2 args, and 1st is not string', () => {
+      assert.throws(() => {
+        const e = new errors.EnumError(21, 12);
+        assert.isNotOk(e);
+      }, TypeError);
+    });
+
+    it('should set message to 1st arg if 2 args', () => {
+      const e = new errors.EnumError('a', 42);
+      assert.strictEqual(e.message, 'a');
+    });
+
+    it('should set data to 2nd arg if 2 args', () => {
+      const e = new errors.EnumError('a', 42);
+      assert.strictEqual(e.data, 42);
+    });
+
+    it('should set message to default if undefined and 2 args', () => {
+      const e = new errors.EnumError(undefined, 42);
+      assert.strictEqual(e.message, errors.EnumError.defaultMessage);
+    });
+
+    it('should be instanceof Error', () => {
+      const e = new errors.EnumError();
       assert.instanceOf(e, Error);
     });
   });
