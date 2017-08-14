@@ -436,3 +436,49 @@ describe('EnumError', () => {
     });
   });
 });
+
+describe('NotSupportedError', () => {
+  describe('#constructor', () => {
+    it('should set message to 1st arg if is string', () => {
+      const e = new errors.NotSupportedError('a');
+      assert.strictEqual(e.message, 'a');
+    });
+
+    it('should set message to default if 1st arg is not string', () => {
+      const e = new errors.NotSupportedError(42);
+      assert.strictEqual(e.message, errors.NotSupportedError.defaultMessage);
+    });
+
+    it('should set data to 1st arg if not string', () => {
+      const e = new errors.NotSupportedError(42);
+      assert.strictEqual(e.data, 42);
+    });
+
+    it('should throw if 2 args, and 1st is not string', () => {
+      assert.throws(() => {
+        const e = new errors.NotSupportedError(21, 12);
+        assert.isNotOk(e);
+      }, TypeError);
+    });
+
+    it('should set message to 1st arg if 2 args', () => {
+      const e = new errors.NotSupportedError('a', 42);
+      assert.strictEqual(e.message, 'a');
+    });
+
+    it('should set data to 2nd arg if 2 args', () => {
+      const e = new errors.NotSupportedError('a', 42);
+      assert.strictEqual(e.data, 42);
+    });
+
+    it('should set message to default if undefined and 2 args', () => {
+      const e = new errors.NotSupportedError(undefined, 42);
+      assert.strictEqual(e.message, errors.NotSupportedError.defaultMessage);
+    });
+
+    it('should be instanceof Error', () => {
+      const e = new errors.NotSupportedError();
+      assert.instanceOf(e, Error);
+    });
+  });
+});
