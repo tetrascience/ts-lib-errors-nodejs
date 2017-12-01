@@ -43,6 +43,36 @@ describe('FormatError', () => {
       assert.strictEqual(e.message, errors.FormatError.defaultMessage);
     });
 
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.FormatError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.FormatError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.FormatError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.FormatError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.FormatError('a', 'a string');
+      });
+    });
+
     it('should be instanceof Error', () => {
       const e = new errors.FormatError();
       assert.instanceOf(e, Error);
@@ -103,6 +133,36 @@ describe('ValidationError', () => {
       assert.strictEqual(e.message, errors.ValidationError.defaultMessage);
     });
 
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.ValidationError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.ValidationError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.ValidationError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.ValidationError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.ValidationError('a', 'a string');
+      });
+    });
+
     it('should be instanceof Error', () => {
       const e = new errors.ValidationError();
       assert.instanceOf(e, Error);
@@ -148,6 +208,36 @@ describe('CredentialsError', () => {
     it('should set message to default if undefined and 2 args', () => {
       const e = new errors.CredentialsError(undefined, 42);
       assert.strictEqual(e.message, errors.CredentialsError.defaultMessage);
+    });
+
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.CredentialsError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.CredentialsError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.CredentialsError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.CredentialsError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.CredentialsError('a', 'a string');
+      });
     });
 
     it('should be instanceof Error', () => {
@@ -197,6 +287,36 @@ describe('UnauthorizedError', () => {
       assert.strictEqual(e.message, errors.UnauthorizedError.defaultMessage);
     });
 
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.UnauthorizedError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.UnauthorizedError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.UnauthorizedError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.UnauthorizedError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.UnauthorizedError('a', 'a string');
+      });
+    });
+
     it('should be instanceof Error', () => {
       const e = new errors.UnauthorizedError();
       assert.instanceOf(e, Error);
@@ -242,6 +362,36 @@ describe('NotFoundError', () => {
     it('should set message to default if undefined and 2 args', () => {
       const e = new errors.NotFoundError(undefined, 42);
       assert.strictEqual(e.message, errors.NotFoundError.defaultMessage);
+    });
+
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotFoundError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotFoundError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotFoundError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotFoundError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotFoundError('a', 'a string');
+      });
     });
 
     it('should be instanceof Error', () => {
@@ -291,6 +441,36 @@ describe('ExistsError', () => {
       assert.strictEqual(e.message, errors.ExistsError.defaultMessage);
     });
 
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.ExistsError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.ExistsError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.ExistsError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.ExistsError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.ExistsError('a', 'a string');
+      });
+    });
+
     it('should be instanceof Error', () => {
       const e = new errors.ExistsError();
       assert.instanceOf(e, Error);
@@ -336,6 +516,36 @@ describe('ConcurrencyError', () => {
     it('should set message to default if undefined and 2 args', () => {
       const e = new errors.ConcurrencyError(undefined, 42);
       assert.strictEqual(e.message, errors.ConcurrencyError.defaultMessage);
+    });
+
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.ConcurrencyError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.ConcurrencyError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.ConcurrencyError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.ConcurrencyError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.ConcurrencyError('a', 'a string');
+      });
     });
 
     it('should be instanceof Error', () => {
@@ -384,6 +594,36 @@ describe('TempUnavailableError', () => {
       assert.strictEqual(e.message, errors.TempUnavailableError.defaultMessage);
     });
 
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.TempUnavailableError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.TempUnavailableError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.TempUnavailableError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.TempUnavailableError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.TempUnavailableError('a', 'a string');
+      });
+    });
+
     it('should be instanceof Error', () => {
       const e = new errors.TempUnavailableError();
       assert.instanceOf(e, Error);
@@ -430,6 +670,36 @@ describe('EnumError', () => {
       assert.strictEqual(e.message, errors.EnumError.defaultMessage);
     });
 
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.EnumError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.EnumError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.EnumError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.EnumError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.EnumError('a', 'a string');
+      });
+    });
+
     it('should be instanceof Error', () => {
       const e = new errors.EnumError();
       assert.instanceOf(e, Error);
@@ -474,6 +744,36 @@ describe('NotSupportedError', () => {
     it('should set message to default if undefined and 2 args', () => {
       const e = new errors.NotSupportedError(undefined, 42);
       assert.strictEqual(e.message, errors.NotSupportedError.defaultMessage);
+    });
+
+    it('should allow data to be a number', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotSupportedError('a', 42);
+      });
+    });
+
+    it('should allow data to be a Date', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotSupportedError('a', new Date());
+      });
+    });
+
+    it('should allow data to be a null', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotSupportedError('a', null);
+      });
+    });
+
+    it('should allow data to be undefined', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotSupportedError('a', undefined);
+      });
+    });
+
+    it('should allow data to be a string', () => {
+      assert.doesNotThrow(() => {
+        new errors.NotSupportedError('a', 'a string');
+      });
     });
 
     it('should be instanceof Error', () => {
