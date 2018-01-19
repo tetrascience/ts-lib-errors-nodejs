@@ -1,5 +1,5 @@
 {
-  "name": "ts-errors",
+  "name": "ts-lib-errors-node",
   "longName": "Common errors for Node.js",
   "version": "1.0.0",
   "dependencies": {
